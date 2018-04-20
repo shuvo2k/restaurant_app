@@ -1,6 +1,6 @@
 from django import forms
 from django.contrib.auth.models import User
-from foodtaskerapp.models import Resturant
+from foodtaskerapp.models import Resturant, Meal
 
 class UserForm(forms.ModelForm):
     email = forms.CharField(max_length=180, required=True)
@@ -14,3 +14,13 @@ class ResturantForm(forms.ModelForm):
         model = Resturant
         fields = ('name', 'phone', 'address', 'logo')
 
+class UserFormEdit(forms.ModelForm):
+    email = forms.CharField(max_length=180, required=True)
+    class Meta:
+        model = User
+        fields = ('first_name', 'last_name', 'email')
+
+class MealForm(forms.ModelForm):
+    class Meta:
+        model = Meal
+        exclude = ('resturant',)

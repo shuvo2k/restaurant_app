@@ -1,0 +1,22 @@
+{% extends 'resturant/resturant_base.html' %} {% load bootstrap4 %} {% block content %}
+<div class="container">
+
+    <div class="card">
+        <div class="card-heading bg-blue">
+            <h4 class="card-title text-center text-white py-2">Account</h4>
+
+        </div>
+        <div class="card-body">
+            <form action="" method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                <h4>User Section :</h4>
+                {%bootstrap_form user_form%}
+                <h4>Resturant Section :</h4>
+                {%bootstrap_form resturant_form%}
+                <br>
+                <button type="submit" class="btn btn-pink">Update</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
