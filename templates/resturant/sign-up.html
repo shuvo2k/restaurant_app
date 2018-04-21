@@ -1,10 +1,10 @@
-{% extends "base_signup.html" %} {% load bootstrap4 %} {% block title %}Sign Up {% endblock %} {% block heading %} Resturant Sign up {% endblock %} {% block content %}
+{% extends "base_signup.html" %} {% load bootstrap4 %} {% block title %}Sign Up {% endblock %} {% block heading %} Restaurant Sign up {% endblock %} {% block content %}
 <form action="" method="POST" enctype="multipart/form-data">
 
     {% csrf_token %}
     <h3>Personal Info</h3>
     {%bootstrap_form user_form%}
-    <h3>Resturant Info</h3>
+    <h3> Restaurant Info</h3>
     {%bootstrap_form resturant_form%} {% buttons %}
     <button type="submit" class="btn btn-pink pull-right">Submit</button> {% endbuttons %}
 </form>
